@@ -323,14 +323,14 @@ double CONTROLLER_realize(int i){
     // second membership function of q1, V12, implies that q1 is medium
     if (controller.x[0] <= 0 && controller.x[0] >= -PI / 2){
         membership.q1[1] = (controller.x[0] + PI / 2) / (PI / 2);
-    } else if (controller.x[0] <= PI && controller.x[0] >= 0){
+    } else if (controller.x[0] <= PI / 2 && controller.x[0] >= 0){
         membership.q1[1] = (PI / 2 - controller.x[0]) / (PI / 2);
     } else{
         membership.q1[1] = 0;
     }
 
     // third membership function of q1, V13, implies that q1 is large
-    if (controller.x[0] <= PI && controller.x[0] >= 0){
+    if (controller.x[0] <= PI / 2 && controller.x[0] >= 0){
         membership.q1[2] = controller.x[0] / (PI / 2);
     } else{
         membership.q1[2] = 0;
@@ -347,14 +347,14 @@ double CONTROLLER_realize(int i){
     // second membership function of q2, V22, implies that q2 is medium
     if (controller.x[2] <= 0 && controller.x[2] >= -PI / 2){
         membership.q2[1] = (controller.x[2] + PI / 2) / (PI / 2);
-    } else if (controller.x[2] <= PI && controller.x[2] >= 0){
+    } else if (controller.x[2] <= PI / 2 && controller.x[2] >= 0){
         membership.q2[1] = (PI / 2 - controller.x[2]) / (PI / 2);
     } else{
         membership.q2[1] = 0;
     }
 
     // third membership function of q2, V23, implies that q2 is large
-    if (controller.x[2] <= PI && controller.x[2] >= 0){
+    if (controller.x[2] <= PI / 2 && controller.x[2] >= 0){
         membership.q2[2] = controller.x[2] / (PI / 2);
     } else{
         membership.q2[2] = 0;
